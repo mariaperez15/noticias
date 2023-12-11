@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 3
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- <ion-slides [options]="sliderOpts" *ngIf="favoritosService.favoritos.length === 0">
+    <ion-slide>
+      <ion-label>No tienes ningun favorito guardado</ion-label>
+    </ion-slide>
+  </ion-slides> -->
+  <app-noticias *ngIf="favoritosService.favoritos.length > 0 " 
+    [enFavoritos]="true"
+    [noticias]="favoritosService.favoritos"></app-noticias>
+</ion-content>

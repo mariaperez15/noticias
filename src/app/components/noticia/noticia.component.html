@@ -1,0 +1,16 @@
+<ion-card>
+  <img *ngIf="noticia.urlToImage" alt="Silhouette of mountains" [src]="noticia.urlToImage" />
+  <ion-card-header>
+    <ion-card-title>{{noticia.title}}</ion-card-title>
+    <div class="mostrarMas">
+      <ion-button fill="clear" (click)="mostrarMenu()">
+        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+      </ion-button>
+    </div>
+    <ion-card-subtitle>{{noticia.source.name}}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>{{noticia.description}}</ion-card-content>
+  <ion-button ion-button fill="outline" [href]="noticia.url" large>Ver más</ion-button>
+  <ion-button *ngIf="enFavoritos" (click)="borrarFav()" color="danger"><ion-icon name="trash-outline"></ion-icon></ion-button>
+</ion-card>
